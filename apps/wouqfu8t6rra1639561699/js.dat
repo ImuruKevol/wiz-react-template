@@ -1,0 +1,43 @@
+
+const { useState } = React;
+
+const App = (props) => {
+    const { wiz, children } = props;
+    // console.log(props)
+    // console.log(children)
+    const [state, setState] = useState("default");
+    const onChange = async ({ target }) => {
+        const { value } = target;
+        setState(value);
+        const resp = await wiz.connect("widget.connect.test")
+            .data({
+                id: 1,
+                name: "ktw",
+                test: "ok!",
+                value,
+            })
+            .event("show");
+
+        // console.log("response: ", resp);
+    }
+
+    wiz.bind("test", (res) => {
+        // console.log("test? ", res);
+    }, false);
+
+    return (
+        <div>
+            {children}
+            <div>
+                {"this is react test"}
+            </div>
+            <input
+                type="text"
+                value={state}
+                onChange={onChange}
+            />
+        </div>
+    );
+}
+
+export default App;

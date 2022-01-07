@@ -2,19 +2,16 @@ doctype 5
 
 html(ng-app="app")
     head
-        {$ wiz.theme('default', 'base', 'header.pug') | safe $}
+        {$ wiz.theme('react', 'base', 'header.pug') $}
         
     body.antialiased
         script(src='/resources/themes/default/libs/tabler/dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js')
         script(src='/resources/themes/default/libs/tabler/dist/libs/peity/jquery.peity.min.js')
         script(src='/resources/themes/default/libs/tabler/dist/js/tabler.min.js')
-        script(src='/resources/themes/default/js/test.js' type="text/babel")
 
-        #react-test
-        
         .page
             .preview
-                {$ view | safe $}
+                {$ view $}
 
             style.
                 html,

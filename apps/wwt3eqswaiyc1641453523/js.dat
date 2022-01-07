@@ -1,0 +1,70 @@
+let wiz_controller = async ($sce, $scope, $timeout) => {
+        // call wiz api
+        let status = await wiz.API.async('status', {});
+        console.log(status);
+    
+        /*
+        // WIZ JS API Variables
+        wiz.id // random generated wiz workspace app id
+        wiz.namespace // defined namespace at view
+        wiz.app_namespace // defined namespace at wiz workspace 
+        wiz.render_id // random generated view instance id
+        */
+    
+        /*
+        // bind event. allow access form another wiz
+        wiz.bind("modal-show", (data) => {
+            $scope.data = data;
+            $('#' + wiz.render_id).modal("show");
+            $timeout();
+        });
+    
+        // response to caller, when event end.
+        $scope.event = {};
+        $scope.event.submit = async () => {
+            $('#' + wiz.render_id).modal("hide");
+            let resp = true;
+            wiz.response("modal-show", resp);
+        }
+    
+        $scope.event.close = async () => {
+            $('#' + wiz.render_id).modal("hide");
+            let resp = false;
+            wiz.response("modal-show", resp);
+        }
+        */
+    
+        // call another wiz's event.
+        /*
+        $scope.call_view = async () => {
+            let resp = await wiz.connect("view namespace")
+                .data({
+                    title: "Confirm",
+                    message: "Are you sure?",
+                    btn_close: "Cancel",
+                    btn_action: "Confirm",
+                    btn_class: "btn-success"
+                })
+                .event("modal-show");
+    
+            console.log("[response]", resp);
+        }
+        */
+    
+        /*
+        let socket = wiz.socket.get();
+        // let socket = wiz.socket.get('app_namespace');
+        
+        socket.on("connect", function (data) {
+            socket.emit("response", "hello");
+        });
+    
+        socket.on("disconnect", function (data) {
+        });
+    
+        socket.on("response", function (data) {
+            console.log("response", data);
+        });
+        */
+    }
+    

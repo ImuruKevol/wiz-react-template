@@ -1,0 +1,36 @@
+const { useState, useEffect } = React;
+
+const TestApp = () => {
+    const [state, setState] = useState("default2");
+    const onChange = ({ target }) => {
+        const { value } = target;
+        setState(value);
+        wiz.connect("widget.react.test")
+            .data({hell: "fuck"})
+            .event("test")
+    }
+
+    wiz.bind("show", (data) => {
+        console.log(data);
+        setState(data.value);
+        // wiz.response("show", {hello: "world!"});
+    }, false);
+
+    // useEffect(() => {
+    // });
+
+    return (
+        <div>
+            <div>
+                {"this is react test"}
+            </div>
+            <input
+                type="text"
+                value={state}
+                onChange={onChange}
+            />
+        </div>
+    );
+}
+
+export default TestApp;
