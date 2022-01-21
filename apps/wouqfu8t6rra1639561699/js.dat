@@ -1,15 +1,27 @@
 
-const { useState } = React;
+const { useState, useEffect } = React;
+
+const TestSubApp = ({ value }) => {
+    return (
+        <>
+            {"this is test?"}
+            <input type="text" value={value} onChange={() => {}} />
+            <>
+                {"multi fragment test"}
+            </>
+        </>
+    );
+}
 
 const App = (props) => {
     const { wiz, children } = props;
     // console.log(props)
     // console.log(children)
     const [state, setState] = useState("default");
-    const onChange = async ({ target }) => {
+    const onChange = ({ target }) => {
         const { value } = target;
         setState(value);
-        const resp = await wiz.connect("widget.connect.test")
+        wiz.connect("widget.connect.test")
             .data({
                 id: 1,
                 name: "ktw",
@@ -17,13 +29,13 @@ const App = (props) => {
                 value,
             })
             .event("show");
-
-        // console.log("response: ", resp);
     }
 
-    wiz.bind("test", (res) => {
-        // console.log("test? ", res);
-    }, false);
+    useEffect(() => {
+        wiz.bind("test", (data) => {
+            console.log(data);
+        }, false);
+    }, []);
 
     return (
         <div>
@@ -36,6 +48,7 @@ const App = (props) => {
                 value={state}
                 onChange={onChange}
             />
+            <TestSubApp value={state} />
         </div>
     );
 }

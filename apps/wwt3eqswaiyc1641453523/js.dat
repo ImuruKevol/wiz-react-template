@@ -2,6 +2,12 @@ let wiz_controller = async ($sce, $scope, $timeout) => {
         // call wiz api
         let status = await wiz.API.async('status', {});
         console.log(status);
+
+        $scope.event = {
+            test: () => {
+                console.log("asdf")
+            }
+        }
     
         /*
         // WIZ JS API Variables

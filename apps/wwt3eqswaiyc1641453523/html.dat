@@ -1,5 +1,3 @@
 .container
-        h3= message
-        // {$ wiz.render("app-namespace-1", "view-instance-namespace") $}
-        // {$ wiz.render("app-namespace-2", data='hello') $}
+    input(type="text" ng-change="event.test()")
     

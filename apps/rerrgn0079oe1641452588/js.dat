@@ -5,19 +5,20 @@ const TestApp = () => {
     const onChange = ({ target }) => {
         const { value } = target;
         setState(value);
-        wiz.connect("widget.react.test")
-            .data({hell: "fuck"})
-            .event("test")
+        toastr.info("test");
+        // wiz.connect("widget.react.test")
+        //     .data({hell: "fuck"})
+        //     .event("test")
     }
 
-    wiz.bind("show", (data) => {
-        console.log(data);
-        setState(data.value);
-        // wiz.response("show", {hello: "world!"});
-    }, false);
-
-    // useEffect(() => {
-    // });
+    useEffect(() => {
+        console.log("test!")
+        wiz.bind("show", (data) => {
+            // console.log(data);
+            setState(data.value);
+            // wiz.response("show", {hello: "world!"});
+        }, false);
+    }, []);
 
     return (
         <div>

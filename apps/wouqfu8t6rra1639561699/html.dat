@@ -1,7 +1,4 @@
 .container(id='widget.react.test')
     h3 fsdsfgsdfgsgg123123
     h4 asdf;lasdfl;jasd;ldasf;lakjldld;fald;sfalk;dsf;kldf
-
-.dupl
-    {$ wiz.render("widget.react.dupl", "widget.connect.test") $}
-    
+{$ wiz.render("widget.react.dupl", "widget.connect.test") $}
