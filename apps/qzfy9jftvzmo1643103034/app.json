@@ -1,0 +1,1 @@
+{"id": "qzfy9jftvzmo1643103034", "title": "Test App", "namespace": "widget.react.testapp", "properties": {"html": "pug", "js": "babel", "css": "scss"}, "viewuri": "/", "created": "2022-01-25 18:30:34", "updated": "2022-01-27 16:47:23", "category": "widget", "theme": "react/base", "controller": "base", "script_type": "text/javascript"}

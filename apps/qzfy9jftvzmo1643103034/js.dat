@@ -1,0 +1,23 @@
+import Subtest from './Subtest';
+const { useState, useEffect } = React;
+
+const Test = () => {
+    const [value, setValue] = useState("");
+
+    useEffect(() => {
+        console.log(wiz)
+        console.log(wiz['widget.react.testapp'])
+    }, []);
+
+    return (
+        <div>
+            this is test app!
+            <Subtest
+                value={value}
+                setValue={setValue}
+            />
+        </div>
+    );
+}
+
+export default Test;

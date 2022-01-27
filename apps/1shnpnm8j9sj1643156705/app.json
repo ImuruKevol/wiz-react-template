@@ -1,0 +1,1 @@
+{"id": "1shnpnm8j9sj1643156705", "title": "SubTest", "namespace": "widget.react.subtest", "properties": {"html": "pug", "js": "babel", "css": "scss"}, "viewuri": "/", "created": "2022-01-26 09:25:05", "updated": "2022-01-27 16:17:49", "category": "widget", "controller": "base", "theme": "react/base", "script_type": "text/javascript"}

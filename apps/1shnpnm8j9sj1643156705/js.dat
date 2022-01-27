@@ -1,0 +1,23 @@
+const Subtest = ({ value, setValue }) => {
+    return (
+        <>
+            <h1>히힣</h1>
+            <div>this is sub component</div>
+            <input
+                type="text"
+                value={value}
+                onChange={e => {
+                    const { value } = e.target;
+                    if(!/^\d*$/.test(value)) {
+                        e.preventDefault();
+                        return;
+                    }
+                    setValue(value);
+                }}
+            />
+            {value}
+        </>
+    );
+};
+
+export default Subtest;

@@ -1,3 +1,38 @@
 .container
-    input(type="text" ng-change="event.test()")
+    // #box1.box2.box3 asdf
+    // button test
+    // input(type="submit" data-asdf)
+
+    // ul
+    //     li 1
+    //     li 2
+    //     li 3
+    //     li 4
+
+    // .t1
+    // .t2
+
+    // .t3
+    //     .t4 asdf
+
+    // .t5 5text
+
+    // .t6
+    //     .t6-1 6text
     
+    // .t7
+    //     .t7-1 7text
+
+    // .t8
+    //     .t8-1 8text
+
+    div.ba
+        div.bw
+            button 1
+            button 2
+            button 3
+    
+    // input(type="range")
+
+    // div.input-area
+    //     input(type="range" min="1" max="99" ng-model="range" class="percentage-{{range}}")
