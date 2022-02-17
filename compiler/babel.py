@@ -48,6 +48,7 @@ def after_compile(wiz, js, data):
         _search = p.search(js)
         component = _search[1]
     except Exception as e:
+        print("Do not found Component")
         return ''
     if component == '':
         return ''
@@ -58,4 +59,14 @@ def after_compile(wiz, js, data):
     """
     fs = wiz.__wiz__.framework.model("wizfs", module="wiz").use(f"wiz/yarn/src")
     fs.write(f"{component}.jsx", js)
-    system(f"cd yarn/src && npx esbuild {component}.jsx --bundle --external:react --external:'react-dom' --outfile=../../branch/master/themes/react/resources/react_app.js")
+    args = {
+        "COMPONENT": component,
+        "BRANCH": wiz.branch(),
+        "THEME": wiz.render_theme.split("/")[0],
+    }
+    args_arr = []
+    for key in args:
+        val = args[key]
+        args_arr.append(f"{key}={val}")
+    args_str = " ".join(args_arr)
+    system(f"cd yarn && {args_str} yarn run build")
