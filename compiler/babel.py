@@ -43,11 +43,13 @@ def compile(wiz, js, data):
     return js
 
 def after_compile(wiz, js, data):
+
     p = re.compile('export[\s]+default[\s]+([a-zA-Z]+);?')
     try:
         _search = p.search(js)
         component = _search[1]
     except Exception as e:
+        print(js)
         print("Do not found Component")
         return ''
     if component == '':

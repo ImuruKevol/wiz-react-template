@@ -6,12 +6,12 @@ const Test = () => {
 
     useEffect(() => {
         console.log(wiz)
-        console.log(wiz['widget.react.testapp'])
+        console.log(wiz['component.react.testapp'])
     }, []);
 
     return (
         <div>
-            this is test app!
+            this is test app!!!!!!
             <Subtest
                 value={value}
                 setValue={setValue}
