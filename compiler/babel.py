@@ -49,7 +49,6 @@ def after_compile(wiz, js, data):
         _search = p.search(js)
         component = _search[1]
     except Exception as e:
-        print(js)
         print("Do not found Component")
         return ''
     if component == '':
@@ -65,6 +64,7 @@ def after_compile(wiz, js, data):
         "COMPONENT": component,
         "BRANCH": wiz.branch(),
         "THEME": wiz.render_theme.split("/")[0],
+        "BUILD_FILE": component,
     }
     args_arr = []
     for key in args:

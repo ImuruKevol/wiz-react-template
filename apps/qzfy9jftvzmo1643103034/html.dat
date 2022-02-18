@@ -1,4 +1,4 @@
-{$ wiz.render("widget.react.subtest", js_compile=False, after_compile=True) $}
+{$ wiz.render("widget.react.subtest") $}
 #root
 
-script(src='/resources/themes/react/react_app.js')
+script(src='/resources/themes/react/dist/Test.js')
